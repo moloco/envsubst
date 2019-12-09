@@ -1,19 +1,11 @@
 ## envsubst
+
 This is a simple Docker image that provides the envsubst executable which can be used when expanding environment variables in strings or files.
+This image is currently being used by the MOJO cloudbuild script. The image should be built with gcloud command to the project before running the script.
 
-## Example 1 - string
+```
+gcloud builds submit --tags=gcr.io/$PROJECT_ID/envsubst .
+```
 
-    docker container run --rm -it -e var=value bhgedigital/envsubst sh -c "echo This container has \$var | envsubst"
-
-output:
-
-    This container has value
-
-## Example 2 - file
-
-    docker container run --rm -it -e var=value -v $(pwd):/wd bhgedigital/envsubst sh -c "envsubst < /wd/file.txt > file-subst.txt" && cat file-subst.txt
-
-output:
-
-    This container has value
+This image is cloned from this repository: https://github.com/datasailors/envsubst.git
 

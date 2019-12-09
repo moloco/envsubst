@@ -1,6 +1,6 @@
-FROM alpine:3.6
+FROM alpine:3
 
-MAINTAINER Alex Iankoulski <alex_iankoulski@yahoo.com>
+MAINTAINER Byungjoon Lee (byungjoon@molocoads.com)
 
 RUN apk add --update libintl && apk add --virtual build_deps gettext
 
